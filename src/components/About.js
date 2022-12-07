@@ -9,5 +9,5 @@ function About(){
 	return React.createElement("div",
 		{id:"Demo",className:"democlass"},
 		React.createElement("h1",null,"ABout page")
-		)
+		  )
 }

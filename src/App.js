@@ -1,36 +1,16 @@
-/*import React from 'react'
-import Events from './Events'
-export default function App() {
-  return (
-    <div><Events/></div>
-  )
-}*/
-import {browserRouter,Routes,Route} from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
-import contact from './components/contact'
-import Navbar from './components/Navbar'
+import {useState} from 'react'
+import {useSelector,useDispatch} from 'react-redux'
+import {increment,decrement} from './action'
+
 function App(){
+  const count=useSelector(state=>state.counter)
+  const dispatch=useDispatch()
   return(
-    <div>
-
-  FOUND from './components/NotFOUND'
-
-   pp(){
-    (
-      iv>
-   
-    <BrowserRouter>
-    <Navbar/>
-    <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/about" element={<about/>}/>
-    <Route path="/contact" element={<contact/>}/>
-    <Route path="*" element={<NOTFOUND/>}
-    </Routes>
-    </BrowserRouter>
-
-    )
+    <div className="App">
+    <h1>{count}</h1>
+    <button onClick={()=>{dispatch(increment())}}>=></button>
+    <button onClick={()=>{dispatch(decrement())}}>=></button>
+    </div>
+    );
 }
-
-export default App
+export default App;
